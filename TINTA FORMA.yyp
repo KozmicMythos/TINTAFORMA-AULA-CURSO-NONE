@@ -38,6 +38,7 @@
     {"id":{"name":"bpoakopdkas","path":"objects/bpoakopdkas/bpoakopdkas.yy",},},
     {"id":{"name":"jesuscristo","path":"objects/jesuscristo/jesuscristo.yy",},},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
+    {"id":{"name":"spr_teste","path":"sprites/spr_teste/spr_teste.yy",},},
   ],
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
