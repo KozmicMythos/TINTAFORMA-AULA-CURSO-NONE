@@ -1,11 +1,9 @@
 {
   "$GMObject":"",
-  "%Name":"bpoakopdkas",
-  "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-  ],
+  "%Name":"jesuscristo",
+  "eventList":[],
   "managed":true,
-  "name":"bpoakopdkas",
+  "name":"jesuscristo",
   "overriddenProperties":[],
   "parent":{
     "name":"Objects",

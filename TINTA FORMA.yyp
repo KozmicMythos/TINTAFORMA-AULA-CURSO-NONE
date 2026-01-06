@@ -36,6 +36,7 @@
   "name":"TINTA FORMA",
   "resources":[
     {"id":{"name":"bpoakopdkas","path":"objects/bpoakopdkas/bpoakopdkas.yy",},},
+    {"id":{"name":"jesuscristo","path":"objects/jesuscristo/jesuscristo.yy",},},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
   ],
   "resourceType":"GMProject",
