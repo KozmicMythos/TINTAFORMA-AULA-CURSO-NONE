@@ -17,6 +17,9 @@
     {"name":"Timelines","order":8,"path":"folders/Timelines.yy",},
   ],
   "ResourceOrderSettings":[
-    {"name":"jesuscristo","order":1,"path":"objects/jesuscristo/jesuscristo.yy",},
+    {"name":"spr_player_","order":4,"path":"sprites/spr_player_/spr_player_.yy",},
+    {"name":"spr_player_idle_2","order":3,"path":"sprites/spr_player_idle_2/spr_player_idle_2.yy",},
+    {"name":"spr_player_run_1","order":1,"path":"sprites/spr_player_run_1/spr_player_run_1.yy",},
+    {"name":"spr_player_run","order":2,"path":"sprites/spr_player_run/spr_player_run.yy",},
   ],
 }
