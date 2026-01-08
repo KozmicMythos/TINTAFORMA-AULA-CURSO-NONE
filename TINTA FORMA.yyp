@@ -39,6 +39,7 @@
     {"id":{"name":"obj_parede","path":"objects/obj_parede/obj_parede.yy",},},
     {"id":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
+    {"id":{"name":"scr_utilidades","path":"scripts/scr_utilidades/scr_utilidades.yy",},},
     {"id":{"name":"spr_parede","path":"sprites/spr_parede/spr_parede.yy",},},
     {"id":{"name":"spr_player_","path":"sprites/spr_player_/spr_player_.yy",},},
     {"id":{"name":"spr_player_idle_2","path":"sprites/spr_player_idle_2/spr_player_idle_2.yy",},},

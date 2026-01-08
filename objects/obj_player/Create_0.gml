@@ -75,12 +75,25 @@ checa_chao = function ()
     chao = place_meeting(x,y + 1,obj_parede);  
 }
 
+
+
+
+roda_debug = function () { 
+        
+    
+    //se o global.debug nao
+    if !global.debug return;
+        
+    //show_debug_overlay(global.debug);
+    dbg_watch(ref_create(self,"velv"),"Velocidade Vertical"); 
+    dbg_slider(ref_create(id,"max_velv"),0,10,"Maxima velocidade vertical", .1);
+    dbg_slider(ref_create(id,"grav"),0,10,"Gravidade",.1);    
+
+}
+
+//rodando o debug
+roda_debug();
+
 #endregion
 
-
-
-dbg_watch(ref_create(self,"velv"),"Velocidade Vertical");
-
-dbg_slider(ref_create(id,"max_velv"),0,10,"Maxima velocidade vertical", .1);
-dbg_slider(ref_create(id,"grav"),0,10,"Gravidade",.1);
 
