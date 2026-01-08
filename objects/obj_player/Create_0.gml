@@ -6,6 +6,7 @@ max_velh = 1;
 velv     = 0;
 max_velv = 3;
 grav     = .2;
+chao     = false;
 
 
 #endregion
@@ -43,8 +44,12 @@ movimentacao = function () {
     
     //aplicando a gravidade
     if !chao 
-    {
+    { 
         velv += grav;
+        
+        if velv >= max_velv {
+            velv = max_velv;
+        }
     }
     else
     {
@@ -61,7 +66,7 @@ movimentacao = function () {
     //movimentação vertical
     move_and_collide(0,velv,obj_parede,4);
     
-    show_debug_message(y)
+    show_debug_message(velv);
     
 }
 
@@ -71,3 +76,11 @@ checa_chao = function ()
 }
 
 #endregion
+
+
+
+dbg_watch(ref_create(self,"velv"),"Velocidade Vertical");
+
+dbg_slider(ref_create(id,"max_velv"),0,10,"Maxima velocidade vertical", .1);
+dbg_slider(ref_create(id,"grav"),0,10,"Gravidade",.1);
+
