@@ -89,18 +89,25 @@ checa_chao = function ()
 
 //estados
 
+troca_sprite = function (_sprite) {
+    
+    if sprite_index != _sprite {
+        sprite_index = _sprite;
+        image_index = 0;
+    }
+    
+}
 
 estado_parado = function ()
 {
+    troca_sprite(spr_player_idle)
     
-    sprite_index = spr_player_idle
+    //sprite_index = spr_player_idle
     if left xor right {
-        image_index = 0;
         estado = estado_run;
     }
         
     if jump {
-        image_index = 0;
         estado = estado_jump;
     }
 }
@@ -108,15 +115,13 @@ estado_parado = function ()
 
 estado_run = function () 
 { 
-    sprite_index = spr_player_run
+    troca_sprite(spr_player_run);
     
     if !left and !right or velh == 0 {
-        image_index = 0;
         estado = estado_parado
     }
         
     if jump {
-        image_index = 0;
         estado = estado_jump;
     }
     
@@ -125,10 +130,9 @@ estado_run = function ()
 
 estado_jump = function ()
 {
-    sprite_index = spr_player_jump;
+    troca_sprite(spr_player_jump);
     
     if chao {
-      image_index = 0;
       estado = estado_parado;
     }
 }
