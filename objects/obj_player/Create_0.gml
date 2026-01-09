@@ -4,9 +4,14 @@
 velh     = 0;
 max_velh = 1;
 velv     = 0;
-max_velv = 3;
+max_velv = 3.8;
 grav     = .2;
 chao     = false;
+
+xscale = image_xscale;
+yscale = image_yscale;
+
+estado = noone;
 
 
 #endregion
@@ -69,14 +74,52 @@ movimentacao = function () {
     
 }
 
+ajusta_xscale = function () {
+    
+    if velh != 0 {
+        xscale = sign(velh);
+    }
+    
+}
+
 checa_chao = function ()
 { 
     chao = place_meeting(x,y + 1,obj_parede);  
 }
 
+//estados
 
 
+estado_parado = function ()
+{
+    sprite_index = spr_player_idle
+    if left xor right estado = estado_run;
+        
+    if jump estado = estado_jump;
+}
 
+
+estado_run = function () 
+{ 
+    sprite_index = spr_player_run
+    
+    if !left and !right estado = estado_parado
+        
+    if jump estado = estado_jump;
+        
+}
+
+estado_jump = function ()
+{
+    sprite_index = spr_player_jump;
+    
+    if chao estado = estado_parado;
+}
+#endregion
+
+#region debug
+
+/*
 roda_debug = function () { 
         
     
@@ -105,9 +148,42 @@ ativa_debug = function () {
         }
     }
     
+}*/
+
+
+debug_criado = false;
+
+ativa_debug = function () {
+    if (keyboard_check_pressed(vk_tab)) {
+        global.debug = !global.debug;
+    }
 }
 
+roda_debug = function () {
+
+    
+    // Liga / desliga o overlay
+    // Se desligado, reseta o estado e sai
+    if (!DEBUG_MODE) {
+        debug_criado = false;
+        return;
+    }
+
+    // Cria os controles UMA VEZ
+    if (!debug_criado) {
+
+        dbg_watch(ref_create(id, "velv"), "Velocidade Vertical"); 
+        dbg_slider(ref_create(id, "max_velv"), 0, 10, "Máxima velocidade vertical", 0.1);
+        dbg_slider(ref_create(id, "grav"), 0, 10, "Gravidade", 0.1);
+
+        debug_criado = true;
+    }
+};
 
 #endregion
+
+//Definindo o o estado inicial do player
+estado = estado_parado;
+
 
 

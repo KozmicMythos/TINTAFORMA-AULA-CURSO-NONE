@@ -5,7 +5,10 @@
     {"$GMAudioGroup":"","%Name":"audiogroup_default","name":"audiogroup_default","resourceType":"GMAudioGroup","resourceVersion":"2.0","targets":-1,},
   ],
   "configs":{
-    "children":[],
+    "children":[
+      {"children":[],"name":"modo_normal",},
+      {"children":[],"name":"modo_debug",},
+    ],
     "name":"Default",
   },
   "defaultScriptType":1,
@@ -44,6 +47,7 @@
     {"id":{"name":"spr_player_","path":"sprites/spr_player_/spr_player_.yy",},},
     {"id":{"name":"spr_player_idle_2","path":"sprites/spr_player_idle_2/spr_player_idle_2.yy",},},
     {"id":{"name":"spr_player_idle","path":"sprites/spr_player_idle/spr_player_idle.yy",},},
+    {"id":{"name":"spr_player_jump","path":"sprites/spr_player_jump/spr_player_jump.yy",},},
     {"id":{"name":"spr_player_run_1","path":"sprites/spr_player_run_1/spr_player_run_1.yy",},},
     {"id":{"name":"spr_player_run","path":"sprites/spr_player_run/spr_player_run.yy",},},
   ],
