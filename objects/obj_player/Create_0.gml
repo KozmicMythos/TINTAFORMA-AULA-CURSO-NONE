@@ -38,7 +38,6 @@ pega_input = function (){
 #endregion
 
 
-
 #region Métodos
 
 movimentacao = function () {
@@ -50,8 +49,7 @@ movimentacao = function () {
     //aplicando a gravidade
     if !chao 
     { 
-        velv += grav;
-        
+        velv += grav;  
         if velv >= max_velv {
             velv = max_velv;
         }
@@ -90,17 +88,17 @@ checa_chao = function ()
 //estados
 
 troca_sprite = function (_sprite) {
-    
+     
     if sprite_index != _sprite {
         sprite_index = _sprite;
-        image_index = 0;
-    }
+        image_index  = 0;
+    }; 
     
 }
 
 estado_parado = function ()
 {
-    troca_sprite(spr_player_idle)
+    troca_sprite(spr_player_idle);
     
     //sprite_index = spr_player_idle
     if left xor right {
@@ -110,6 +108,8 @@ estado_parado = function ()
     if jump {
         estado = estado_jump;
     }
+    
+    
 }
 
 
@@ -123,8 +123,7 @@ estado_run = function ()
         
     if jump {
         estado = estado_jump;
-    }
-    
+    }; 
         
 }
 
