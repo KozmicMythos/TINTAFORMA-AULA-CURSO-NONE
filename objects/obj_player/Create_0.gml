@@ -11,6 +11,8 @@ chao     = false;
 xscale = image_xscale;
 yscale = image_yscale;
 
+testeeee = 0;
+
 estado = noone;
 
 
