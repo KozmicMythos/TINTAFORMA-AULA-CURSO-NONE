@@ -19,6 +19,7 @@
   ],
   "ResourceOrderSettings":[
     {"name":"obj_parede","order":1,"path":"objects/obj_parede/obj_parede.yy",},
+    {"name":"spr_chao","order":7,"path":"sprites/spr_chao/spr_chao.yy",},
     {"name":"spr_parede","order":6,"path":"sprites/spr_parede/spr_parede.yy",},
     {"name":"spr_player_idle_2","order":2,"path":"sprites/spr_player_idle_2/spr_player_idle_2.yy",},
     {"name":"spr_player_idle","order":1,"path":"sprites/spr_player_idle/spr_player_idle.yy",},
