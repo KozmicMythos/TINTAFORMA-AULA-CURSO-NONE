@@ -96,11 +96,22 @@ troca_sprite = function (_sprite) {
         image_index  = 0;
     }; 
     
+};
+//chgecando se acabou a animacao
+acabou_animacao = function (_estado) {
+    
+    if image_index > image_number - 1 {
+        estado = _estado;
+    };
+    
 }
+
 
 estado_parado = function ()
 {
     troca_sprite(spr_player_idle);
+    movimentacao();
+    checa_chao();
     
     //sprite_index = spr_player_idle
     if left xor right {
@@ -111,6 +122,12 @@ estado_parado = function ()
         estado = estado_jump;
     }
     
+    //se eu nao estou no chão eu caio
+    if !chao {
+        estado = estado_jump;
+    }
+    
+    if keyboard_check_pressed(ord("E")) estado = estado_powerup_inicio;
     
 }
 
@@ -118,7 +135,9 @@ estado_parado = function ()
 estado_run = function () 
 { 
     troca_sprite(spr_player_run);
-    
+    movimentacao();
+    checa_chao();
+      
     if !left and !right or velh == 0 {
         estado = estado_parado
     }
@@ -131,47 +150,67 @@ estado_run = function ()
 
 estado_jump = function ()
 {
-    troca_sprite(spr_player_jump);
+    checa_chao();
+    movimentacao();
     
+        //descendo
+    if velv > 0 {
+        troca_sprite(spr_player_fall)
+    }else{
+        //subindo
+        troca_sprite(spr_player_jump);
+    };
+    
+    //encostando no chão
     if chao {
       estado = estado_parado;
     }
+};
+
+estado_powerup_inicio = function (){ 
+    
+    troca_sprite(spr_player_powerup_1); 
+    
+    acabou_animacao(estado_powerup_meio);
+    
 }
+
+estado_powerup_meio = function () { 
+    troca_sprite(spr_player_powerup_2);
+    
+    acabou_animacao(estado_powerup_fim);
+    
+}
+
+estado_powerup_fim = function () { 
+    
+    troca_sprite(spr_player_powerup_3);
+    
+    acabou_animacao(estado_parado);
+    
+};
+
+estado_entrando_tinta = function (){
+    
+    //trocando de sprite
+    troca_sprite(spr_player_entrando_tinta);
+    //Saindo da animação
+    acabou_animacao(estado_saindo_tinta);
+    
+}
+
+estado_saindo_tinta = function () {
+    
+    //trocando de sprite
+    troca_sprite(spr_player_saindo_tinta);
+    //Saindo da animação
+    acabou_animacao(estado_parado);
+    
+}
+
 #endregion
 
 #region debug
-
-/*
-roda_debug = function () { 
-        
-    
-    //se o global.debug nao for verdadeiro, ele sai do código
-    
-    //if !global.debug return;
-        
-    show_debug_overlay(global.debug);
-    dbg_watch(ref_create(id,"velv"),"Velocidade Vertical"); 
-    dbg_slider(ref_create(id,"max_velv"),0,10,"Maxima velocidade vertical", .1);
-    dbg_slider(ref_create(id,"grav"),0,10,"Gravidade",.1);    
-
-}
-
-
-//ativando o debug
-ativa_debug = function () {
-    
-    if keyboard_check_pressed(vk_tab)  {
-        show_message("DESATIVEI")
-        global.debug = !global.debug;
-        
-        if global.debug {
-            //rodando o debug
-            roda_debug();
-        }
-    }
-    
-}*/
-
 
 debug_criado = false;
 
