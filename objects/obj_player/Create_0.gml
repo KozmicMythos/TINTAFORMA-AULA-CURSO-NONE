@@ -120,14 +120,15 @@ estado_parado = function ()
         
     if jump {
         estado = estado_jump;
+        instance_create_depth(x,y + 4,depth - 1,obj_particula);
     }
     
     //se eu nao estou no chão eu caio
     if !chao {
-        estado = estado_jump;
+        estado = estado_jump; 
     }
     
-    if keyboard_check_pressed(ord("E")) estado = estado_powerup_inicio;
+    if keyboard_check_pressed(ord("E")) estado = estado_entrando_tinta;
     
 }
 
@@ -142,8 +143,9 @@ estado_run = function ()
         estado = estado_parado
     }
         
-    if jump {
-        estado = estado_jump;
+    if jump { 
+        estado = estado_jump; 
+        instance_create_depth(x,y + 4,depth - 1,obj_particula);
     }; 
         
 }
@@ -152,6 +154,7 @@ estado_jump = function ()
 {
     checa_chao();
     movimentacao();
+    
     
         //descendo
     if velv > 0 {
@@ -162,8 +165,11 @@ estado_jump = function ()
     };
     
     //encostando no chão
-    if chao {
-      estado = estado_parado;
+    if chao { 
+      
+         estado = estado_parado;
+        
+        instance_create_depth(x,y,depth - 1,obj_particula);
     }
 };
 
@@ -206,7 +212,7 @@ estado_saindo_tinta = function () {
     //Saindo da animação
     acabou_animacao(estado_parado);
     
-}
+};
 
 #endregion
 

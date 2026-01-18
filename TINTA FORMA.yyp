@@ -40,6 +40,7 @@
   "name":"TINTA FORMA",
   "resources":[
     {"id":{"name":"obj_parede","path":"objects/obj_parede/obj_parede.yy",},},
+    {"id":{"name":"obj_particula","path":"objects/obj_particula/obj_particula.yy",},},
     {"id":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
     {"id":{"name":"scr_utilidades","path":"scripts/scr_utilidades/scr_utilidades.yy",},},
@@ -51,6 +52,7 @@
     {"id":{"name":"spr_player_idle_2","path":"sprites/spr_player_idle_2/spr_player_idle_2.yy",},},
     {"id":{"name":"spr_player_idle","path":"sprites/spr_player_idle/spr_player_idle.yy",},},
     {"id":{"name":"spr_player_jump","path":"sprites/spr_player_jump/spr_player_jump.yy",},},
+    {"id":{"name":"spr_player_particula","path":"sprites/spr_player_particula/spr_player_particula.yy",},},
     {"id":{"name":"spr_player_powerup_1","path":"sprites/spr_player_powerup_1/spr_player_powerup_1.yy",},},
     {"id":{"name":"spr_player_powerup_2","path":"sprites/spr_player_powerup_2/spr_player_powerup_2.yy",},},
     {"id":{"name":"spr_player_powerup_3","path":"sprites/spr_player_powerup_3/spr_player_powerup_3.yy",},},
