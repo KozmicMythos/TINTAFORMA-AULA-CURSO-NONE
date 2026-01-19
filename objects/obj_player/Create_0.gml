@@ -1,3 +1,6 @@
+//iniciando o efeito
+inicia_efeito_squash();
+
 #region  Variaveis
 
 //movimentação
@@ -8,10 +11,8 @@ max_velv = 3.8;
 grav     = .2;
 chao     = false;
 
-xscale = image_xscale;
-yscale = image_yscale;
-
-testeeee = 0;
+//arrumando a direcao
+dir = 1;
 
 estado = noone;
 
@@ -69,16 +70,14 @@ movimentacao = function () {
     //movimentação horizontal
     move_and_collide(velh,0,obj_parede,4);
     //movimentação vertical
-    move_and_collide(0,velv,obj_parede,4);
-    
+    move_and_collide(0,velv,obj_parede,4); 
     
 }
 
 ajusta_xscale = function () {
     
-    if velh != 0 {
-        xscale = sign(velh);
-    }
+    if (velh != 0) dir = sign(velh);
+    
     
 }
 
@@ -121,6 +120,8 @@ estado_parado = function ()
     if jump {
         estado = estado_jump;
         instance_create_depth(x,y + 4,depth - 1,obj_particula);
+        //aplicando o efeito
+        efeito_squash(.6,1.3);
     }
     
     //se eu nao estou no chão eu caio
@@ -145,16 +146,21 @@ estado_run = function ()
         
     if jump { 
         estado = estado_jump; 
-        instance_create_depth(x,y + 4,depth - 1,obj_particula);
+        instance_create_depth(x,y + 4,depth - 1,obj_particula); 
+        
+        //aplicando o efeito
+        efeito_squash(.6,1.3);
+        
     }; 
         
 }
 
+
+//PULANDO
 estado_jump = function ()
 {
     checa_chao();
     movimentacao();
-    
     
         //descendo
     if velv > 0 {
@@ -165,11 +171,13 @@ estado_jump = function ()
     };
     
     //encostando no chão
-    if chao { 
-      
-         estado = estado_parado;
-        
+    if chao {  
+        //Volto para o estado parado
+        estado = estado_parado;
+        //criando as particulas
         instance_create_depth(x,y,depth - 1,obj_particula);
+        //aplicando o efeito
+        efeito_squash(1.2,0.7);
     }
 };
 
