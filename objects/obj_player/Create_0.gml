@@ -16,6 +16,9 @@ dir = 1;
 
 estado = noone;
 
+lay_col  = layer_tilemap_get_id("tl_level");
+colisor      = [lay_col];
+
 
 #endregion
 
@@ -75,9 +78,9 @@ movimentacao = function () {
 //colocando o move and colide 
 movimento = function () { 
     //movimentação horizontal
-    move_and_collide(velh,0,obj_parede,4);
+    move_and_collide(velh,0,lay_col,4);
     //movimentação vertical
-    move_and_collide(0,velv,obj_parede,4); 
+    move_and_collide(0,velv,lay_col,4); 
 }
 
 ajusta_xscale = function () {
@@ -89,7 +92,7 @@ ajusta_xscale = function () {
 
 checa_chao = function ()
 { 
-    chao = place_meeting(x,y + 1,obj_parede);  
+    chao = place_meeting(x,y + 1,lay_col);  
 }
 
 //estados
@@ -233,14 +236,14 @@ estado_tinta_loop = function () {
     movimentacao();
     
     //nao deixando o player cair
-    var _parar= !place_meeting(x + (velh * 18),y + 1,obj_parede);
+    var _parar= !place_meeting(x + (velh * 18),y + 1,lay_col);
     
     if _parar 
     {
        velh = 0;
     };
     
-    if tinta{
+    if tinta and velh == 0 {
         estado = estado_saindo_tinta;
     };
     
