@@ -25,6 +25,7 @@ estado = noone;
 right = 0;
 left  = 0;
 jump  = 0;
+tinta = 0;
 
 //Setando as teclas
 keyboard_set_map(ord("A"),vk_left);
@@ -35,6 +36,7 @@ pega_input = function (){
     left  = keyboard_check(vk_left);
     right = keyboard_check(vk_right);
     jump  = keyboard_check_pressed(vk_space);
+    tinta = keyboard_check_pressed(ord("E"));
     
 };
 
@@ -129,7 +131,10 @@ estado_parado = function ()
         estado = estado_jump; 
     }
     
-    if keyboard_check_pressed(ord("E")) estado = estado_entrando_tinta;
+    if tinta {
+        estado = estado_entrando_tinta;
+        instance_create_depth(x,y ,depth - 1,obj_particula_tinta); 
+    }
     
 }
 
@@ -150,7 +155,6 @@ estado_run = function ()
         
         //aplicando o efeito
         efeito_squash(.6,1.3);
-        
     }; 
         
 }
@@ -190,6 +194,7 @@ estado_powerup_inicio = function (){
 }
 
 estado_powerup_meio = function () { 
+    
     troca_sprite(spr_player_powerup_2);
     
     acabou_animacao(estado_powerup_fim);
@@ -209,7 +214,22 @@ estado_entrando_tinta = function (){
     //trocando de sprite
     troca_sprite(spr_player_entrando_tinta);
     //Saindo da animação
-    acabou_animacao(estado_saindo_tinta);
+    acabou_animacao(estado_tinta_loop);
+    
+};
+
+//ficando no loop da tinta
+estado_tinta_loop = function () {
+    
+    troca_sprite(spr_player_loop);
+    jump = false;
+    movimentacao();
+    
+    if tinta{
+        estado = estado_saindo_tinta;
+        
+        instance_create_depth(x ,y , depth - 1,obj_particula_sair);
+    }
     
 }
 
