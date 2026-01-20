@@ -4,6 +4,7 @@
     {"name":"2 Objects","order":9,"path":"folders/2 Objects.yy",},
     {"name":"Particulas","order":4,"path":"folders/2 Objects/Particulas.yy",},
     {"name":"3 Sprites","order":1,"path":"folders/3 Sprites.yy",},
+    {"name":"Tileset","order":8,"path":"folders/3 Sprites/Tileset.yy",},
     {"name":"Player","order":5,"path":"folders/3 Sprites/Player.yy",},
     {"name":"Animation Curves","order":12,"path":"folders/Animation Curves.yy",},
     {"name":"Efeitos","order":16,"path":"folders/Efeitos.yy",},

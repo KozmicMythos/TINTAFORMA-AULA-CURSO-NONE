@@ -3,7 +3,7 @@ pega_input();
 ajusta_xscale();
 roda_debug();
 ativa_debug();
-
+movimento();
 //retornando o efeito
 retorna_squash();
 

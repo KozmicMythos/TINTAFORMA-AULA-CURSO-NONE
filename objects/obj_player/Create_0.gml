@@ -68,12 +68,16 @@ movimentacao = function () {
             velv = -max_velv;
         }
     };
+
     
+}
+
+//colocando o move and colide 
+movimento = function () { 
     //movimentação horizontal
     move_and_collide(velh,0,obj_parede,4);
     //movimentação vertical
     move_and_collide(0,velv,obj_parede,4); 
-    
 }
 
 ajusta_xscale = function () {
@@ -133,7 +137,6 @@ estado_parado = function ()
     
     if tinta {
         estado = estado_entrando_tinta;
-        instance_create_depth(x,y ,depth - 1,obj_particula_tinta); 
     }
     
 }
@@ -216,6 +219,10 @@ estado_entrando_tinta = function (){
     //Saindo da animação
     acabou_animacao(estado_tinta_loop);
     
+    if !instance_exists(obj_particula_tinta){
+        instance_create_depth(x,y,depth - 1,obj_particula_tinta);
+    }
+    
 };
 
 //ficando no loop da tinta
@@ -225,11 +232,17 @@ estado_tinta_loop = function () {
     jump = false;
     movimentacao();
     
+    //nao deixando o player cair
+    var _parar= !place_meeting(x + (velh * 18),y + 1,obj_parede);
+    
+    if _parar 
+    {
+       velh = 0;
+    };
+    
     if tinta{
         estado = estado_saindo_tinta;
-        
-        instance_create_depth(x ,y , depth - 1,obj_particula_sair);
-    }
+    };
     
 }
 
@@ -239,6 +252,10 @@ estado_saindo_tinta = function () {
     troca_sprite(spr_player_saindo_tinta);
     //Saindo da animação
     acabou_animacao(estado_parado);
+    
+    if !instance_exists(obj_particula_sair){
+        instance_create_depth(x ,y , depth - 1,obj_particula_sair);
+    }
     
 };
 
