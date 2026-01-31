@@ -49,8 +49,8 @@ pega_input = function (){
 #region Métodos
 
 movimentacao = function () {
-      
-    y = round(y);
+    
+    
     //aplicando os inputs no velh 
     velh = (right - left) * max_velh;
     
@@ -58,12 +58,11 @@ movimentacao = function () {
     if !chao 
     { 
         velv += grav;  
-        if velv >= max_velv {
-            velv = max_velv;
-        }
+
     }
     else
     {
+        y = round(y);
         velv = 0;
         //pulando
         if (jump) 
@@ -72,6 +71,8 @@ movimentacao = function () {
         }
     };
 
+    //limitando a velocidade vertical
+    velv = clamp(velv,-max_velv,max_velv);
     
 }
 
@@ -163,6 +164,10 @@ estado_run = function ()
         efeito_squash(.6,1.3);
     }; 
         
+    //SE eu não estou no chão, então estou pulando
+    if !chao {
+        estado = estado_jump;
+    }
 }
 
 
@@ -188,6 +193,10 @@ estado_jump = function ()
         instance_create_depth(x,y,depth - 1,obj_particula);
         //aplicando o efeito
         efeito_squash(1.2,0.7);
+    }
+    //fazendo o player encostar a cabeça no teto e não deslizar
+    if place_meeting(x,y-1,colisor){
+        velv += 0.1;
     }
 };
 
