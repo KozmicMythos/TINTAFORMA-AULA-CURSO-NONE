@@ -4,6 +4,7 @@
     {"name":"2 Objects","order":9,"path":"folders/2 Objects.yy",},
     {"name":"Particulas","order":4,"path":"folders/2 Objects/Particulas.yy",},
     {"name":"3 Sprites","order":1,"path":"folders/3 Sprites.yy",},
+    {"name":"Decoração","order":9,"path":"folders/3 Sprites/Decoração.yy",},
     {"name":"Player","order":5,"path":"folders/3 Sprites/Player.yy",},
     {"name":"Tileset","order":8,"path":"folders/3 Sprites/Tileset.yy",},
     {"name":"Animation Curves","order":12,"path":"folders/Animation Curves.yy",},
@@ -48,5 +49,6 @@
     {"name":"spr_player_saindo_tinta","order":11,"path":"sprites/spr_player_saindo_tinta/spr_player_saindo_tinta.yy",},
     {"name":"spr_tinta_particula_entrando","order":15,"path":"sprites/spr_tinta_particula_entrando/spr_tinta_particula_entrando.yy",},
     {"name":"spr_tinta_particula_saindo","order":14,"path":"sprites/spr_tinta_particula_saindo/spr_tinta_particula_saindo.yy",},
+    {"name":"spr_tocha","order":1,"path":"sprites/spr_tocha/spr_tocha.yy",},
   ],
 }

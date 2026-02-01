@@ -122,6 +122,7 @@ estado_parado = function ()
     movimentacao();
     checa_chao();
     
+    
     //sprite_index = spr_player_idle
     if left xor right {
         estado = estado_run;
@@ -176,6 +177,8 @@ estado_jump = function ()
 {
     checa_chao();
     movimentacao();
+    
+    
     
         //descendo
     if velv > 0 {
