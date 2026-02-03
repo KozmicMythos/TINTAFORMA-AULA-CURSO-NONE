@@ -1,18 +1,18 @@
 {
   "$GMObject":"",
-  "%Name":"obj_tocha",
-  "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-  ],
+  "%Name":"obj_aidaime",
+  "eventList":[],
   "managed":true,
-  "name":"obj_tocha",
+  "name":"obj_aidaime",
   "overriddenProperties":[],
   "parent":{
-    "name":"2 Objects",
-    "path":"folders/2 Objects.yy",
+    "name":"Cenario",
+    "path":"folders/2 Objects/Cenario.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"obj_parede",
+    "path":"objects/obj_parede/obj_parede.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -31,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_tocha",
-    "path":"sprites/spr_tocha/spr_tocha.yy",
+    "name":"spr_aidaime",
+    "path":"sprites/spr_aidaime/spr_aidaime.yy",
   },
   "spriteMaskId":null,
   "visible":true,

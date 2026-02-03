@@ -17,7 +17,7 @@ dir = 1;
 estado = noone;
 
 lay_col  = layer_tilemap_get_id("tl_level");
-colisor      = [lay_col];
+colisor      = [lay_col,obj_parede];
 
 
 #endregion
@@ -79,9 +79,9 @@ movimentacao = function () {
 //colocando o move and colide 
 movimento = function () { 
     //movimentação horizontal
-    move_and_collide(velh,0,lay_col,4);
+    move_and_collide(velh,0,colisor,4);
     //movimentação vertical
-    move_and_collide(0,velv,lay_col,4); 
+    move_and_collide(0,velv,colisor,4); 
 }
 
 ajusta_xscale = function () {
@@ -93,7 +93,7 @@ ajusta_xscale = function () {
 
 checa_chao = function ()
 { 
-    chao = place_meeting(x,y + 1,lay_col);  
+    chao = place_meeting(x,y + 1,colisor);  
 }
 
 //estados
