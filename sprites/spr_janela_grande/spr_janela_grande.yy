@@ -2,7 +2,7 @@
   "$GMSprite":"v2",
   "%Name":"spr_janela_grande",
   "bboxMode":0,
-  "bbox_bottom":67,
+  "bbox_bottom":54,
   "bbox_left":0,
   "bbox_right":29,
   "bbox_top":0,
