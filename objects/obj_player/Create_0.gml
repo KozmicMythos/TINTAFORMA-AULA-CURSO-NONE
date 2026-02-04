@@ -68,6 +68,7 @@ movimentacao = function () {
         if (jump) 
         {
             velv = -max_velv;
+            colisor[2] = noone; 
         }
     };
 
@@ -112,6 +113,13 @@ acabou_animacao = function (_estado) {
     if image_index > image_number - 1 {
         estado = _estado;
     };
+    
+};
+
+//Pegando o power up 
+pega_powerup = function () {
+    
+    estado = estado_powerup_inicio;
     
 }
 
@@ -182,10 +190,11 @@ estado_jump = function ()
     
         //descendo
     if velv > 0 {
-        troca_sprite(spr_player_fall)
+        troca_sprite(spr_player_fall);
+        if !place_meeting(x,y,obj_parede_one_way) colisor[2] = obj_parede_one_way;
     }else{
         //subindo
-        troca_sprite(spr_player_jump);
+        troca_sprite(spr_player_jump); 
     };
     
     //encostando no chão
@@ -208,6 +217,9 @@ estado_powerup_inicio = function (){
     troca_sprite(spr_player_powerup_1); 
     
     acabou_animacao(estado_powerup_meio);
+    
+    //limitando o player
+    velh = 0;
     
 }
 
@@ -248,7 +260,7 @@ estado_tinta_loop = function () {
     movimentacao();
     
     //nao deixando o player cair
-    var _parar= !place_meeting(x + (velh * 18),y + 1,lay_col);
+    var _parar= !place_meeting(x + (velh * 18),y + 1,colisor);
     
     if _parar 
     {

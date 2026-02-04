@@ -1,18 +1,17 @@
 {
   "$GMObject":"",
-  "%Name":"obj_plataforma_pequena",
-  "eventList":[],
+  "%Name":"obj_powerup",
+  "eventList":[
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},"eventNum":0,"eventType":4,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+  ],
   "managed":true,
-  "name":"obj_plataforma_pequena",
+  "name":"obj_powerup",
   "overriddenProperties":[],
   "parent":{
     "name":"Cenario",
     "path":"folders/2 Objects/Cenario.yy",
   },
-  "parentObjectId":{
-    "name":"obj_parede_one_way",
-    "path":"objects/obj_parede_one_way/obj_parede_one_way.yy",
-  },
+  "parentObjectId":null,
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -31,8 +30,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_plataforma_pequena",
-    "path":"sprites/spr_plataforma_pequena/spr_plataforma_pequena.yy",
+    "name":"spr_powerup",
+    "path":"sprites/spr_powerup/spr_powerup.yy",
   },
   "spriteMaskId":null,
   "visible":true,
