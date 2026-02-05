@@ -12,3 +12,18 @@ movendo = function () {
     //other.pega_powerup();
     
 }
+
+explosao = function () {
+    
+    repeat (120) 
+    { 
+        var part = instance_create_layer(x,y,"efeitos",obj_particula_powerup);
+        part.speed = random_range(3,5);
+        part.direction = random_range(0,359);
+        //falando pra particula que o player é o alvo
+        
+        part.alvo = alvo;
+        
+    }
+    
+}
