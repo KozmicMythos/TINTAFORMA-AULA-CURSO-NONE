@@ -58,7 +58,30 @@ movimentacao = function () {
     if !chao 
     { 
         velv += grav;  
+    }
+    else
+    {
+        y = round(y);
+        velv = 0;
+        //pulando
+        if (jump) 
+        {
+            velv = -max_velv;
+            colisor[2] = noone; 
+        }
+    };
 
+    //limitando a velocidade vertical
+    velv = clamp(velv,-max_velv,max_velv);
+    
+}
+
+movimentacao_vertical = function () {
+    
+    //aplicando a gravidade
+    if !chao 
+    { 
+        velv += grav;  
     }
     else
     {
@@ -220,6 +243,10 @@ estado_powerup_inicio = function (){
     
     //limitando o player
     velh = 0;
+    
+    checa_chao();
+    movimentacao_vertical();
+    
     
 }
 
