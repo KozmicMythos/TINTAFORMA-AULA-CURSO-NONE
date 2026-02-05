@@ -1,6 +1,8 @@
 //rodando apenas se tiver um alvo
 if (!alvo) exit;
     
+image_xscale = lerp(image_xscale,speed * 2,0.2);
+image_angle = direction;
 
 
 if voltar == false {
@@ -14,8 +16,7 @@ if voltar == false {
         voltar = true;
     };
 
-}else{
-    
+}else{ 
     //Agora o voltar é verdadeiro
     direction = point_direction(x,y,alvo.x,alvo.y - 12);    
     speed += 0.1; 

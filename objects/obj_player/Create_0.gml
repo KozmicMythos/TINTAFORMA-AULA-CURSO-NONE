@@ -254,7 +254,12 @@ estado_powerup_meio = function () {
     
     troca_sprite(spr_player_powerup_2);
     
-    acabou_animacao(estado_powerup_fim);
+    //saindo do modo de powerup
+    if !instance_exists(obj_particula_powerup){
+        acabou_animacao(estado_powerup_fim);
+    }
+    
+    //acabou_animacao(estado_powerup_fim);
     
 }
 

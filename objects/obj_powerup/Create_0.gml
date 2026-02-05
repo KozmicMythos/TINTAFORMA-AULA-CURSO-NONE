@@ -1,5 +1,7 @@
-alvo = noone;
 
+alvo = noone;
+//fazendo um efeito no power_up
+efeito = false;
 //rodando eu tiver um alvo
 movendo = function () {
     
