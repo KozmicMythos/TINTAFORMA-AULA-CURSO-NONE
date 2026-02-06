@@ -19,6 +19,9 @@ estado = noone;
 lay_col  = layer_tilemap_get_id("tl_level");
 colisor      = [lay_col,obj_parede];
 
+//avisando o player que ele pode usar o powerup
+power_up = false;
+
 
 #endregion
 
@@ -171,7 +174,7 @@ estado_parado = function ()
         estado = estado_jump; 
     }
     
-    if tinta {
+    if tinta and power_up {
         estado = estado_entrando_tinta;
     }
     
