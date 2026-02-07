@@ -297,10 +297,12 @@ estado_tinta_loop = function () {
     jump = false;
     movimentacao();
     
+    var _chao = place_meeting(x,y+1,chao_tinta)
     //nao deixando o player cair
     var _parar= !place_meeting(x + (velh * 18),y + 1,colisor);
+    var _parando_na_tinta = !place_meeting(x + (velh * 18),y + 1,_chao);
     
-    if _parar 
+    if _parar and _parando_na_tinta
     {
        velh = 0;
     };
