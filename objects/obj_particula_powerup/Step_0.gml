@@ -31,7 +31,7 @@ if voltar == false {
                 var _yscale = random_range(-0.1,0.3);
                 efeito_squash(1 + _xscale,1 + _yscale);
             }
-            
+            screenshake(2)
             instance_destroy();  
         }; 
     };

@@ -4,12 +4,13 @@ inicia_efeito_squash();
 #region  Variaveis
 
 //movimentação
-velh     = 0;
-max_velh = 1;
-velv     = 0;
-max_velv = 3.8;
-grav     = .2;
-chao     = false;
+velh       = 0;
+max_velh   = 1;
+velv       = 0;
+max_velv   = 3.8;
+grav       = .2;
+chao       = false;
+chao_tinta = false;
 
 //arrumando a direcao
 dir = 1;
@@ -17,8 +18,8 @@ dir = 1;
 estado = noone;
 
 lay_col  = layer_tilemap_get_id("tl_level");
-chao_tinta = layer_tilemap_get_id("tl_tinta");
-colisor      = [lay_col,obj_parede,chao_tinta];
+tile_set_tinta = layer_tilemap_get_id("tl_tinta");
+colisor      = [lay_col,obj_parede];
 
 //avisando o player que ele pode usar o powerup
 power_up = false;
@@ -122,6 +123,9 @@ ajusta_xscale = function () {
 checa_chao = function ()
 { 
     chao = place_meeting(x,y + 1,colisor);  
+    
+    //Checando se tem tinta
+    chao_tinta = place_meeting(x,y+1,tile_set_tinta);
 }
 
 //estados
@@ -175,9 +179,8 @@ estado_parado = function ()
         estado = estado_jump; 
     }
     
-    var _chao_tinta = place_meeting(x,y+1,chao_tinta);
-    
-    if tinta and power_up and _chao_tinta {
+     
+    if tinta and power_up and chao_tinta {
         estado = estado_entrando_tinta;
     }
     
@@ -296,12 +299,14 @@ estado_tinta_loop = function () {
     troca_sprite(spr_player_loop);
     jump = false;
     movimentacao();
-    
-    var _chao = place_meeting(x,y+1,chao_tinta)
+    checa_chao();
+    //var _chao = place_meeting(x,y+1,chao_tinta)
     //nao deixando o player cair
-    var _parar = !place_meeting(x + (velh * 18),y + 1,colisor);
-    var _parando_na_tinta = !place_meeting(x + (velh * 18),y + 1,_chao);
+    var _parar = !place_meeting(x + (velh * 18),y + 1,tile_set_tinta);
+    //var _parando_na_tinta = !place_meeting(x + (velh * 18),y + 1,_chao);
+    //parando com a tinta
     
+        
     if _parar
     {
        velh = 0;
