@@ -1,4 +1,4 @@
-mask_index = spr_player_idle;
+//mask_index = spr_player_idle;
 pega_input();
 ajusta_xscale();
 roda_debug();

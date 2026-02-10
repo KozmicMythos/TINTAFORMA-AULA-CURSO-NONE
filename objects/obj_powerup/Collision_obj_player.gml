@@ -3,14 +3,18 @@ if alvo == noone {
     
     other.pega_powerup();
     alvo = other.id;
-    explosao();
+    explosao(); 
     
 }
 alvo = other;
 
+
+//ativando a destruição o powerup
+
+
 //me destruindo
 if alvo {
-    image_alpha -= 0.008;
+    image_alpha -= 0.01;
     
     if image_alpha <= 0 { 
         instance_destroy();
@@ -20,7 +24,7 @@ if alvo {
         }
     }
 }
-
+show_debug_message(pegou_powerup)
 
 /*
 if !instance_exists(obj_particula_powerup){

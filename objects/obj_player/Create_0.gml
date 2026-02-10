@@ -12,6 +12,8 @@ grav       = .2;
 chao       = false;
 chao_tinta = false;
 
+//mudando a mascara de colisao
+mask_index = spr_player_idle;
 //arrumando a direcao
 dir = 1;
 
@@ -256,6 +258,12 @@ estado_powerup_inicio = function (){
     checa_chao();
     movimentacao_vertical();
     
+    //tirando o bug q ele cai ao pegar o item
+    //se ele está caindo então o colisor aparece
+    if velv >= 0 {
+        colisor[2] = obj_parede_one_way;
+    }
+    
     
 }
 
@@ -296,6 +304,7 @@ estado_entrando_tinta = function (){
 //ficando no loop da tinta
 estado_tinta_loop = function () {
     
+    mask_index = spr_player_loop;
     troca_sprite(spr_player_loop);
     jump = false;
     movimentacao();
@@ -312,7 +321,12 @@ estado_tinta_loop = function () {
        velh = 0;
     };
     
-    if tinta and velh == 0 {
+    //checando se tem coisa em cima
+    var _teto = place_meeting(x,y-10,colisor);
+    
+    //saindo do modo de tinta
+    if tinta and velh == 0 and !_teto{
+        
         estado = estado_saindo_tinta;
     };
     
@@ -328,6 +342,9 @@ estado_saindo_tinta = function () {
     if !instance_exists(obj_particula_sair){
         instance_create_depth(x ,y , depth - 1,obj_particula_sair);
     }
+    
+    //trocando a mascara de colisao
+    mask_index = spr_player_idle;
     
 };
 

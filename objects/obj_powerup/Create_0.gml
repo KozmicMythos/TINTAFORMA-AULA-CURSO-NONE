@@ -1,3 +1,5 @@
+//check se o powerup foi pego ou nao
+pegou_powerup = false;
 
 alvo = noone;
 //fazendo um efeito no power_up

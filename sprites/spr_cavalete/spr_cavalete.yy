@@ -2,7 +2,7 @@
   "$GMSprite":"v2",
   "%Name":"spr_cavalete",
   "bboxMode":2,
-  "bbox_bottom":32,
+  "bbox_bottom":24,
   "bbox_left":1,
   "bbox_right":37,
   "bbox_top":1,
