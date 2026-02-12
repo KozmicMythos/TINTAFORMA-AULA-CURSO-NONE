@@ -1,4 +1,2 @@
-with(other){
-    global.chaves += 1; 
-}
+other.pega_chave();
 instance_destroy();

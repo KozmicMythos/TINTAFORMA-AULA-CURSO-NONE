@@ -13,7 +13,8 @@ chao       = false;
 chao_tinta = false;
 
 //Checando quantas chaves o player tem
-global.chaves = 0;
+
+chaves = 0;
 //mudando a mascara de colisao
 mask_index = spr_player_idle;
 //arrumando a direcao
@@ -132,6 +133,26 @@ checa_chao = function ()
     chao_tinta = place_meeting(x,y+1,tile_set_tinta);
 }
 
+//pegando a chave
+pega_chave = function () {
+    chaves++;
+}
+
+//abrindio porta
+abre_porta = function (){
+    
+    //identificando a porta
+    var _porta = instance_place(x + velh,y,obj_porta)
+    
+    //se eu encostei na porta
+    if _porta {
+        //checando se tenho chaves
+        if chaves > 0 {
+            instance_destroy(_porta);
+            chaves--;
+        }
+    }
+}
 //estados
 
 troca_sprite = function (_sprite) {

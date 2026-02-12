@@ -4,6 +4,9 @@ pegou_powerup = false;
 alvo = noone;
 //fazendo um efeito no power_up
 efeito = false;
+
+//como começa
+estado = noone;
 //rodando eu tiver um alvo
 movendo = function () {
     
@@ -29,5 +32,17 @@ explosao = function () {
         part.alvo = alvo;
         
     }
+    
+}
+
+
+estado_parado = function (){
+    
+    show_message("OI")
+    
+}
+
+estado_sumindo = function () {
+    
     
 }

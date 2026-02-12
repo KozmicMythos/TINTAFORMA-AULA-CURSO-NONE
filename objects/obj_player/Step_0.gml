@@ -7,6 +7,7 @@ movimento();
 //retornando o efeito
 retorna_squash();
 
+abre_porta();
 //Rodando o estado do player
 estado();
 
