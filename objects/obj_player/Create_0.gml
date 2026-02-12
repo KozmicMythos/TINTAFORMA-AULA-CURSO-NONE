@@ -12,6 +12,8 @@ grav       = .2;
 chao       = false;
 chao_tinta = false;
 
+//Checando quantas chaves o player tem
+global.chaves = 0;
 //mudando a mascara de colisao
 mask_index = spr_player_idle;
 //arrumando a direcao
