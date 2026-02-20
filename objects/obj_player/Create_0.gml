@@ -146,9 +146,12 @@ abre_porta = function (){
     
     //se eu encostei na porta
     if _porta {
+        
+        //checando se a porta está no estado correto        
         //checando se tenho chaves
-        if chaves > 0 {
-            instance_destroy(_porta);
+        if chaves > 0 && _porta.estado == "fechada"{
+            //instance_destroy(_porta);
+            _porta.estado = "abrindo";
             chaves--;
         }
     }
