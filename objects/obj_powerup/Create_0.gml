@@ -7,6 +7,9 @@ efeito = false;
 
 //como começa
 estado = noone;
+
+//destruindo o powerup
+destroi_poder = false;
 //rodando eu tiver um alvo
 movendo = function () {
     
@@ -22,7 +25,9 @@ movendo = function () {
 
 explosao = function () {
     
-    repeat (120) 
+    var _qtd = irandom_range(80,100);
+    
+    repeat (_qtd) 
     { 
         var part = instance_create_layer(x,y,"efeitos",obj_particula_powerup);
         part.speed = random_range(3,5);
@@ -38,7 +43,6 @@ explosao = function () {
 
 estado_parado = function (){
     
-    show_message("OI")
     
 }
 

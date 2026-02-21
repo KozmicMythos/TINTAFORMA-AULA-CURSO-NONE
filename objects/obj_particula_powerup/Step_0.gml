@@ -1,8 +1,11 @@
 //rodando apenas se tiver um alvo
 if (!alvo) exit;
-    
+
+//Alternando o alpha com base na velocidade
+image_alpha  = speed / 8;    
+
 image_xscale = lerp(image_xscale,speed * 2,0.2);
-image_angle = direction;
+image_angle  = direction;
 
 
 if voltar == false {

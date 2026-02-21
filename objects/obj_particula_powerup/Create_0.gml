@@ -4,3 +4,5 @@ alvo = noone;
 voltar = false;
 
 image_yscale = 0.5
+
+alarm[0] = 120;
