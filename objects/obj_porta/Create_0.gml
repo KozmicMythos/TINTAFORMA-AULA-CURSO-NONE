@@ -1,4 +1,5 @@
 estado = "fechada";
+//teste
 
 //Criando a minha particula
 //ps_porta_abrindo
